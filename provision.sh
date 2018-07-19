@@ -14,11 +14,10 @@ sudo apt-get -y install docker-ce python-pip
 sudo pip install -q docker-compose
 
 #Install Dynatrace OneAgent
-wget -O Dynatrace-OneAgent-Linux.sh -q DT_DOWNLOAD_URI
+wget -O Dynatrace-OneAgent-Linux.sh -q "$DT_DOWNLOAD_URI"
 /bin/sh Dynatrace-OneAgent-Linux.sh  APP_LOG_CONTENT_ACCESS=1
 
 git clone https://github.com/dynatrace-innovationlab/easyTravel-Docker.git
 cd easyTravel-Docker
 echo ET_APM_SERVER_DEFAULT=APM > .env
 sudo docker-compose up -d
-
